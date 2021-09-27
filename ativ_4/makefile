@@ -1,5 +1,3 @@
-all: scannerC
-
 helloC: 
 	flex -o part1/compc.lex.c part1/helloC.lex
 	gcc -o hello part1/compc.lex.c -lfl
