@@ -1,0 +1,15 @@
+SELECT number FROM teste;
+SELECT number, teste FROM teste, teste;
+SELECT number FROM teste, ajuda WHERE teste = 'eu';
+SELECT * FROM teste;
+SELECT number FROM teste WHERE teste = 100;
+SELECT number FROM teste WHERE teste = 100.00;
+SELECT number FROM teste WHERE teste > 100.00;
+SELECT number FROM teste WHERE teste < 100.00;
+SELECT number FROM teste WHERE teste >= 100.00;
+SELECT number FROM teste WHERE teste <= 100.00;
+SELECT number FROM teste WHERE teste <> 100.00;
+SELECT number FROM teste WHERE teste = 'eu' AND eu = 'teste';
+SELECT number FROM teste WHERE teste = 'eu' AND eu = 'teste' OR aa = 'b';
+SELECT number FROM teste WHERE teste = 'eu' AND ( eu = 'teste' OR aa = 'b' );
+select * from teste;
