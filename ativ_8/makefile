@@ -1,7 +1,10 @@
-psql: html.y html.l
+html_parser: html.y html.l
 	bison -d html.y --debug
 	flex -o html.l.c html.l
 	gcc -o html_parser html.l.c html.tab.c -lfl
+	./html_parser teste.txt
+
+execute:
 	./html_parser teste.txt
 
 clean:
