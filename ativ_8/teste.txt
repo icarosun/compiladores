@@ -2,10 +2,33 @@
 <html>
 <body>
 
-<h2>Links</h2>
-<p>links are defined with the a tag:</p>
+<h1>This is heading 1</h1>
+<h2>This is heading 2</h2>
+<h3>This is heading 3</h3>
+<h4>This is heading 4</h4>
+<h5>This is heading 5</h5>
+<h6>This is heading 6</h6>
+
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
 
 <a href="https://www.w3schools.com">This is a link</a>
 
+<img src="https://www.w3schools.com" alt="W3Schools.com" width="104" height="142">
+
+<button>Click me</button>
+
+<ul>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ul>  
+
+<ol>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ol> 
 </body>
 </html>
+
