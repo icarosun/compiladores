@@ -233,15 +233,6 @@ newflow (int nodetype, struct ast *cond, struct ast *tl, struct ast *el)
 static void 
 eval (Hashtable *hashtable, struct ast *a)
 {
-    //printf("Dentro do eval: %c\n ", a->nodetype);
-
-    /*
-    if (a->nodetype == 'L') {
-        printf("Left side: %c\n", a->l->nodetype);
-        printf("Right side: %c\n", a->r->nodetype);
-    }*/
-
-
     double v;
     char *identify; 
 
@@ -297,15 +288,11 @@ eval (Hashtable *hashtable, struct ast *a)
 
         case 'I':
             v = evalExpression(hashtable, ((struct flow *)a)->cond);
-            ///printf("Dentro do if %lf\n", v);
+
             if ( v != 0) {
                 if ( ((struct flow *)a)->tl )  {
-                    //printf("Aquele if maroto Central %c\n", ((struct flow *)a)->tl->nodetype);
+
                     eval(hashtable, ((struct flow *)a)->tl);
-                    //printf("Aquele if maroto Right %c\n", ((struct flow *)a)->tl->r->nodetype);
-                    //printf("Aquele if maroto Left %c\n", ((struct flow *)a)->tl->l->nodetype);
-                    //printf("Aquele if maroto Left do Right %c\n", ((struct flow *)a)->tl->l->r->nodetype);
-                    //printf("Aquele if maroto Left do Left %c\n", ((struct flow *)a)->tl->l->l->nodetype);
                     break;
                 } else {
                     yyerror("block if is null");
@@ -314,15 +301,7 @@ eval (Hashtable *hashtable, struct ast *a)
             } else {
                 if ( ((struct flow *)a)->el )  {
                     eval(hashtable, ((struct flow *)a)->el);
-                } /*else {
-                    yyerror("block if is null");
-                    exit(0);
-                }*/
-                //printf("Aquele else maroto Central %c\n", ((struct flow *)a)->el->nodetype);
-                //printf("Aquele else maroto Right %c\n", ((struct flow *)a)->el->r->nodetype);
-                //printf("Aquele else maroto Left %c\n", ((struct flow *)a)->el->l->nodetype);
-                //printf("Aquele else maroto Left do Right %c\n", ((struct flow *)a)->el->l->r->nodetype);
-                //printf("Aquele else maroto Left do Left %c\n", ((struct flow *)a)->el->l->l->nodetype);
+                } 
                 break;
             }
 

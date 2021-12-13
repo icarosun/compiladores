@@ -2,7 +2,7 @@
     int i
     i = 0
 
-    while (i < 8) {
+    while (i < 5) {
         print("Valor de i: ")
         print(i)
         i = i + 1
