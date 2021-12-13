@@ -22,7 +22,7 @@ Hashtable *htable;
 
 %locations
 
-%token EOL PLUS MINUS PAKU END O_KEY C_KEY IF ELSE MODULO DIV_INT SQRT
+%token EOL PLUS MINUS PAKU END O_KEY C_KEY IF ELSE MODULO DIV_INT SQRT WHILE
 %token TYPE DIV MULT ATRIBUITION PRINT P_LEFT P_RIGHT READ
 
 %token <value> NUMBER
@@ -34,7 +34,7 @@ Hashtable *htable;
 %left DIV MULT DIV_INT
 %nonassoc NOT UMINUS
 
-%type <a> program statements statement declaration print_value read_value assignment expression block comparations if_stmt
+%type <a> program statements statement declaration print_value read_value assignment expression block comparations if_stmt while_stmt
 
 %% 
 
@@ -72,6 +72,7 @@ statement:
     assignment {$$ =  $1;}
     | declaration {$$ = $1;}
     | if_stmt {$$ = $1;}
+    | while_stmt {$$ = $1;}
     | read_value {$$ = $1; }
     | print_value {$$ = $1;}
     | block {$$ = $1;}
@@ -97,6 +98,8 @@ comparations:
 if_stmt: IF P_LEFT comparations P_RIGHT block EOL {$$ = newflow('I', $3, $5, NULL);}
     | IF P_LEFT comparations P_RIGHT block ELSE block EOL {$$ = newflow('I', $3, $5, $7);}
     ;
+
+while_stmt: WHILE P_LEFT comparations P_RIGHT block EOL {$$ = newflow('W', $3, $5, NULL);};
 
 expression:
     expression PLUS expression { $$ = newast('+', $1, $3);}

@@ -290,6 +290,10 @@ eval (Hashtable *hashtable, struct ast *a)
             eval(hashtable, a->l);
             eval(hashtable, a->r);
             break;
+        case 'W':
+            while (evalExpression(hashtable, ((struct flow *)a)->cond))
+                eval(hashtable, ((struct flow *)a)->tl);
+            break;
 
         case 'I':
             v = evalExpression(hashtable, ((struct flow *)a)->cond);

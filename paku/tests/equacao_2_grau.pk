@@ -20,12 +20,13 @@
         } else {
             if (delta == 0) {
                 print("A equação possui apenas uma raiz real: ") 
-                x1 = (- b) / 2 * a
+                x1 = (- b) / (2 * a)
+                print(x1)
             } else {
                 raizDelta = @ delta
 
-                x1 = (- b + raizDelta) / 2 * a
-                x2 = (- b - raizDelta) / 2 * a 
+                x1 = (- b + raizDelta) / (2 * a)
+                x2 = (- b - raizDelta) / (2 * a)
 
                 print("A equação possui duas raizes: ")
                 print(x1)

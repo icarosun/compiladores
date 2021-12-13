@@ -17,6 +17,7 @@ void yyerror(char *s);
 "float"													{return TYPE;}
 "if"													{return IF;}
 "else"													{return ELSE;}
+"while"													{return WHILE;}
 "/"														{return DIV;}
 "#"														{return DIV_INT;}
 "@"														{return SQRT;}

@@ -1,13 +1,10 @@
 ><>
-    float a
-    int b
-    int c 
-    
-    a = 256
+    int i
+    i = 0
 
-    if ((a > 600) or (a < 10)) {
-        print("Testando Not")
-    } else {
-        print("Não")
+    while (i < 8) {
+        print("Valor de i: ")
+        print(i)
+        i = i + 1
     }
 ...
