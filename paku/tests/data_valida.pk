@@ -1,0 +1,57 @@
+><>
+    float dia
+    float mes
+    float ano
+    float multiplo4
+    float multiplo400
+    float multiplo100
+    float bissexto
+
+    print("Digite o dia: ")
+    read(dia)
+    print("Digite o mês: ")
+    read(mes)
+    print("Digite o ano: ")
+    read(ano)
+
+    if ((ano <= 0) or (mes <= 0) or (dia <= 0) or (dia > 31) or (mes > 12)) {
+        print("Data inválida")
+    } else {
+        multiplo400 = ano % 400 
+        multiplo100 = ano % 100
+        multiplo4 = ano % 4
+
+        if (((multiplo4 == 0) and (multiplo100 != 0)) or (multiplo400 == 0)) {
+            bissexto = 1
+        } else {
+            bissexto = 0
+        }
+
+        if (mes == 2) {
+            if (bissexto) {
+                if (dia > 29) {
+                    print("Data inválida")
+                } else {
+                    print("Data válida")
+                }
+            } else {
+                if (dia > 28 ) {
+                    print("Data inválida")
+                } else {
+                    print("Data válida")
+                }
+            }
+        } else {
+            if ((mes == 4) or (mes == 6) or (mes == 9) or (mes == 11)) {
+               if (dia >= 31) {
+                    print("Data inválida")
+                } else {
+                    print("Data válida")
+                }
+            } else {
+                print("Data válida")
+            }
+        }
+    }
+
+...

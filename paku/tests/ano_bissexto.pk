@@ -1,0 +1,22 @@
+><>
+    float ano
+    float multiplo4
+    float multiplo400
+    float multiplo100
+
+    print("Programa - Teste 2, descobrir se é um ano bissexto")
+    print("Digite o ano: ")
+
+    read(ano)
+
+    multiplo400 = ano % 400 
+    multiplo100 = ano % 100
+    multiplo4 = ano % 4
+
+    if (((multiplo4 == 0) and (multiplo100 != 0)) or (multiplo400 == 0)) {
+        print("É ano bissexto")
+    } else {
+        print("Não é ano bissexto")
+    }
+    
+...

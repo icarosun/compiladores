@@ -1,0 +1,54 @@
+><>
+    float num
+    float centena
+    float dezena 
+    float unidade
+    float auxA
+    float auxB
+ 
+    print("Digite o valor: ")
+    read(num) 
+
+    if (num >= 1000) {
+        print("Valor inválido")
+    } else {
+        auxA = num % 100
+        
+        centena = (num - auxA) / 100
+
+        auxB = auxA % 10
+        dezena = (auxA - auxB) / 10
+
+        unidade = auxB
+
+        print("Valor decomposto ->")
+        print(num)
+        print("-------")
+        if (centena > 0 ) {
+            if (centena > 1) {
+                print("Número de cetenas:")
+            } else {
+                print("Número de cetena:")
+            }
+            print(centena)
+        }
+
+        if (dezena > 0 ) {
+            if (dezena > 1) {
+                print("Número de dezenas:")
+            } else {
+                print("Número de dezena:")
+            }
+            print(dezena)
+        }
+
+        if (unidade > 0 ) {
+            if (unidade > 1) {
+                print("Número de unidades:")
+            } else {
+                print("Número de unidade:")
+            }
+            print(unidade)
+        }
+    }
+...
